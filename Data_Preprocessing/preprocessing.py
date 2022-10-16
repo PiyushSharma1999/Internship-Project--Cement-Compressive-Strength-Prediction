@@ -39,7 +39,7 @@ class Preprocessing:
             raise Exception()
     
     def dropUnnecessaryColumns(self,data,columnList):
-        data =data.drop(columnList)
+        data =data.drop(columnList,axis=1)
         return data
     
     def replaceInvalidValueswithNull(self,data):
