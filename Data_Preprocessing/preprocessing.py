@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import StandardScaler
-from imblearn.over_sampling import SMOTE
+
 
 class Preprocessing:
     def __init__(self,file_obj,log_obj):
