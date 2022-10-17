@@ -3,52 +3,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
-import xgboost as xgb
 
-class Find_Model:
-    def __init__(self,file_obj,log_obj):
-        self.file_obj = file_obj
-        self.log_obj = log_obj
-        self.random_forest_regressor = RandomForestRegressor()
-        self.xgb = xgb.XGBRegressor(objective='reg:squarederror',seed=0)
-
-    def get_best_params_for_random_regressor(self,train_X,train_Y):
-        self.log_obj.log(self.file_obj,'Entered get_best_params_for_random_regressor method of Find_Model class')
-        try:
-            self.param_grid_rfr = {
-                                "n_estimators":[10,20,30],
-                                "max_features":["auto","sqrt","log2"],
-                                
-                                "bootstrap":[True,False]
-                                }
-            self.grid = GridSearchCV(self.random_forest_regressor,self.param_grid_rfr,verbose=3,cv=5,n_jobs=-1)
-            self.grid.fit(train_X,train_Y)
-
-            # Extract best params
-            self.n_estimators = self.grid.best_params_["n_estimators"]
-            #self.min_samples_split = self.grid.best_params_["min_samples_split"]
-            self.max_features = self.grid.best_params_["max_features"]
-            self.bootstrap = self.grid.best_params_["bootstrap"]
-
-            # Creating new model with best params
-            self.rfregrssor = RandomForestRegressor(n_estimators=self.n_estimators,
-                                                    max_features=self.max_features,
-                                                    min_samples_split=2,
-                                                    bootstrap=self.bootstrap)
-        
-            # Training new model
-            self.rfregrssor.fit(train_X,train_Y)
-            self.log_obj.log(self.file_obj,'RandomForestRegressor best params: '+str(self.grid.best_params_)+'. Exited the get_best_params_for_random_regressor method of Find_Model class')
-            return self.rfregrssor
-        except Exception as e:
-            self.log_obj.log(self.file_obj,'Exception occured in get_best_params_for_random_regressor method of Find_model class. Exception message: '+str(e))
-            self.log_obj.log(self.file_obj,'RandomForestRegressor parameter tuning failed. Exited the get_best_params_for_random_regressor method of Find_Model class')
-            raise Exception()
-from shutil import ExecError
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import r2_score
-from sklearn.linear_model import LinearRegression
 
 class Find_Model:
     def __init__(self,file_obj,log_obj):
@@ -62,7 +17,7 @@ class Find_Model:
         try:
             self.param_grid_rfr = {
                                 "n_estimators":[10,20,30],
-                                #"max_features":["auto","sqrt","log2"],
+                                
                                 "min_samples_split":[2,4,8],
                                 "bootstrap":[True,False]
                                 }
@@ -72,7 +27,6 @@ class Find_Model:
             # Extract best params
             self.n_estimators = self.grid.best_params_["n_estimators"]
             self.min_samples_split = self.grid.best_params_["min_samples_split"]
-            #self.max_features = self.grid.best_params_["max_features"]
             self.bootstrap = self.grid.best_params_["bootstrap"]
 
             # Creating new model with best params
@@ -94,7 +48,7 @@ class Find_Model:
         try:
             self.param_grid_linear = {
                                        "fit_intercept":[True,False],
-                                       "normalize":[True,False],
+                                       
                                        "copy_X":[True,False] 
                                         }
             # Creating an object of the Grid Search class
@@ -104,12 +58,10 @@ class Find_Model:
 
             # extracting the best parameters
             self.fit_intercept = self.grid.best_params_["fit_intercept"]
-            self.normalize = self.grid.best_params_["normalize"]
             self.copy_X = self.grid.best_params_["copy_X"]
 
             # creating a new model with best parameters
             self.linreg = LinearRegression(fit_intercept = self.fit_intercept,
-                                           normalize = self.normalize,
                                            copy_X = self.copy_X)
             # training the new model
             self.linreg.fit(train_X,train_Y)
