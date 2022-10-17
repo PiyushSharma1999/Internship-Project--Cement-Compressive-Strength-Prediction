@@ -1,6 +1,7 @@
 from shutil import ExecError
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import GridSearchCV
+from sklearn.experimental import enable_halving_search_cv
+from sklearn.model_selection import HalvingGridSearchCV
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
 
@@ -21,7 +22,7 @@ class Find_Model:
                                 "min_samples_split":[2,4,8],
                                 "bootstrap":[True,False]
                                 }
-            self.grid = GridSearchCV(self.random_forest_regressor,self.param_grid_rfr,verbose=3,cv=3,n_jobs=-1)
+            self.grid = HalvingGridSearchCV(self.random_forest_regressor,self.param_grid_rfr,verbose=3,cv=3,n_jobs=-1)
             self.grid.fit(train_X,train_Y)
 
             # Extract best params
@@ -52,7 +53,7 @@ class Find_Model:
                                        "copy_X":[True,False] 
                                         }
             # Creating an object of the Grid Search class
-            self.grid = GridSearchCV(self.linear_reg,self.param_grid_linear,verbose=3,cv=3,n_jobs=-1)
+            self.grid = HalvingGridSearchCV(self.linear_reg,self.param_grid_linear,verbose=3,cv=3,n_jobs=-1)
             # finding the best parameters
             self.grid.fit(train_X,train_Y)
 
