@@ -34,3 +34,39 @@
 2022-10-17/13: 29: 22		Entered the load_model method of class File_Operations
 2022-10-17/13: 29: 22		Model file RandomForestRegressor2 loaded. Exited the load_model method of File_Operations class
 2022-10-17/13: 29: 22		End of Prediction
+2022-10-17/17: 24: 58		Prediction started
+2022-10-17/17: 24: 58		Entered the get data method of Pred Data Getter class
+2022-10-17/17: 24: 58		Data successfully loaded. Exited the get data method of Pred Data Getter class
+2022-10-17/17: 24: 58		Entered the is_null_present method of the Preprocessing class
+2022-10-17/17: 24: 58		Successfully found missing values. Created separate dataframe for null values count. Exited null_values_presence method of class Preprocessing
+2022-10-17/17: 24: 58		Entered the load_model method of class File_Operations
+2022-10-17/17: 24: 58		Model file KMeans_clustering loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 24: 58		Entered the find_correct_model of class File_Operations
+2022-10-17/17: 24: 58		Exited the find_correct_model of File_Operations class with success
+2022-10-17/17: 24: 58		Entered the load_model method of class File_Operations
+2022-10-17/17: 24: 58		Model file RandomForestRegressor2 loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 24: 58		End of Prediction
+2022-10-17/17: 26: 42		Prediction started
+2022-10-17/17: 26: 42		Entered the get data method of Pred Data Getter class
+2022-10-17/17: 26: 42		Data successfully loaded. Exited the get data method of Pred Data Getter class
+2022-10-17/17: 26: 42		Entered the is_null_present method of the Preprocessing class
+2022-10-17/17: 26: 42		Successfully found missing values. Created separate dataframe for null values count. Exited null_values_presence method of class Preprocessing
+2022-10-17/17: 26: 42		Entered the load_model method of class File_Operations
+2022-10-17/17: 26: 42		Model file KMeans_clustering loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 26: 42		Entered the find_correct_model of class File_Operations
+2022-10-17/17: 26: 42		Exited the find_correct_model of File_Operations class with success
+2022-10-17/17: 26: 42		Entered the load_model method of class File_Operations
+2022-10-17/17: 26: 42		Model file RandomForestRegressor2 loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 26: 42		End of Prediction
+2022-10-17/17: 40: 55		Prediction started
+2022-10-17/17: 40: 55		Entered the get data method of Pred Data Getter class
+2022-10-17/17: 40: 55		Data successfully loaded. Exited the get data method of Pred Data Getter class
+2022-10-17/17: 40: 55		Entered the is_null_present method of the Preprocessing class
+2022-10-17/17: 40: 55		Successfully found missing values. Created separate dataframe for null values count. Exited null_values_presence method of class Preprocessing
+2022-10-17/17: 40: 55		Entered the load_model method of class File_Operations
+2022-10-17/17: 40: 55		Model file KMeans_clustering loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 40: 55		Entered the find_correct_model of class File_Operations
+2022-10-17/17: 40: 55		Exited the find_correct_model of File_Operations class with success
+2022-10-17/17: 40: 55		Entered the load_model method of class File_Operations
+2022-10-17/17: 40: 55		Model file RandomForestRegressor2 loaded. Exited the load_model method of File_Operations class
+2022-10-17/17: 40: 55		End of Prediction
