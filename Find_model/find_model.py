@@ -1,5 +1,4 @@
 from shutil import ExecError
-from tkinter import X
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score
